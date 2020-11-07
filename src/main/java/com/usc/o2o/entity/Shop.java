@@ -18,7 +18,7 @@ public class Shop {
 	private Integer priority;
 	private Date createTime;
 	private Date lastEditTime;
-	//	private Integer enableStatus;
+	private Integer enableStatus;
 	private String advice;
 
 	//private List<ShopAuthMap> staffList;
@@ -26,6 +26,14 @@ public class Shop {
 	private ShopCategory shopCategory;
 	//private ShopCategory parentCategory;
 
+
+	public Integer getEnableStatus() {
+		return enableStatus;
+	}
+
+	public void setEnableStatus(Integer enableStatus) {
+		this.enableStatus = enableStatus;
+	}
 
 	public String getPhone() {
 		return phone;
