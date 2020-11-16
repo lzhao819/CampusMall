@@ -74,6 +74,7 @@ public class ShopServiceImpl implements ShopService {
         String dest = PathUtil.getShopImagePath(shop.getShopId());
         String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
         shop.setShopImg(shopImgAddr);
+        //
     }
 
 }
