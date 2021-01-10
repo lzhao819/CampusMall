@@ -1,6 +1,0 @@
-2020-11-08 14:11:25.452[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-11-08 14:11:25.507[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述(String), 测试地址(String), 2020-11-08 14:11:24.916(Timestamp), 1(Long)
-2020-11-08 14:11:25.509[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 0
-2020-11-08 14:12:38.667[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-11-08 14:12:38.716[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述(String), 测试地址(String), 2020-11-08 14:12:38.112(Timestamp), 33(Long)
-2020-11-08 14:12:38.721[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
