@@ -1,18 +1,21 @@
-2021-01-09 20:21:55.573[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, create_time,last_edit_time,enable_status,advice) VALUES (?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2021-01-09 20:21:55.631[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Long), 1(Long), 测试的店铺3(String), test3(String), test3(String), test3(String), null, 2021-01-09 20:21:55.547(Timestamp), 2021-01-09 20:21:55.547(Timestamp), 0(Integer), 审核中(String)
-2021-01-09 20:21:55.655[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2021-01-09 20:21:56.039[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2021-01-09 20:21:56.040[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺3(String), test3(String), test3(String), test3(String), /upload/images/item/shop/34/2021010920215539646.jpeg(String), 2021-01-09 20:21:55.547(Timestamp), 0(Integer), 审核中(String), 2(Long), 1(Long), 34(Long)
-2021-01-09 20:21:56.041[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
-2021-01-09 22:46:27.807[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, create_time,last_edit_time,enable_status,advice) VALUES (?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2021-01-09 22:46:27.866[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Long), 1(Long), 测试的店铺3(String), test3(String), test3(String), test3(String), null, 2021-01-09 22:46:27.78(Timestamp), 2021-01-09 22:46:27.78(Timestamp), 0(Integer), 审核中(String)
-2021-01-09 22:46:27.869[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2021-01-09 22:46:28.222[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2021-01-09 22:46:28.223[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺3(String), test3(String), test3(String), test3(String), /upload/images/item/shop/35/2021010922462778566.jpeg(String), 2021-01-09 22:46:27.78(Timestamp), 0(Integer), 审核中(String), 2(Long), 1(Long), 35(Long)
-2021-01-09 22:46:28.224[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
-2021-01-09 22:47:31.675[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, create_time,last_edit_time,enable_status,advice) VALUES (?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2021-01-09 22:47:31.727[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Long), 1(Long), 测试的店铺3(String), test3(String), test3(String), test3(String), null, 2021-01-09 22:47:31.65(Timestamp), 2021-01-09 22:47:31.65(Timestamp), 0(Integer), 审核中(String)
-2021-01-09 22:47:31.729[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2021-01-09 22:47:32.044[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2021-01-09 22:47:32.045[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺3(String), test3(String), test3(String), test3(String), /upload/images/item/shop/36/2021010922473130981.jpeg(String), 2021-01-09 22:47:31.65(Timestamp), 0(Integer), 审核中(String), 2(Long), 1(Long), 36(Long)
-2021-01-09 22:47:32.046[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2021-01-10 00:43:45.148[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 00:43:45.208[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 00:43:45.265[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 00:48:45.126[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 00:48:45.179[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 00:48:45.224[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 00:54:44.379[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 00:54:44.439[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 00:54:44.489[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 00:58:39.637[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 00:58:39.688[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 00:58:39.726[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 01:01:00.039[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 01:01:00.091[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 01:01:00.138[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 01:05:25.865[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2021-01-10 01:05:25.917[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2021-01-10 01:05:25.955[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2021-01-10 01:05:25.987[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2021-01-10 01:05:25.988[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2021-01-10 01:05:25.996[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1

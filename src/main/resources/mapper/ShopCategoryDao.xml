@@ -3,17 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.usc.o2o.dao.ShopCategoryDao">
-<!--    <select id="queryShopCategory" resultType="com.usc.o2o.entity.ShopCategory">-->
-<!--		SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, creat_time, last_edit_time, parent_id-->
-<!--		FROM tb_shop_category-->
-<!--        <where>-->
-<!--            <if test="shopCategoryCondition.parent!=null">-->
-<!--            and parent_id = #{shopCategoryCondition.parent.shopCategoryId}-->
-<!--            </if>-->
-<!--        </where>-->
-<!--		ORDER BY priority DESC-->
-<!--	</select>-->
-    <select id="queryShopCategory" resultType="com.usc.myo2o.entity.ShopCategory">
+    <select id="queryShopCategory" resultType="com.usc.o2o.entity.ShopCategory">
         SELECT
         shop_category_id,
         shop_category_name,
@@ -26,6 +16,9 @@
         FROM
         tb_shop_category
         <where>
+            <if test="shopCategoryCondition!=null">
+                and parent_id is not null
+            </if>
             <if test="shopCategoryCondition.parentId!=null">
                 and parent_id = #{shopCategoryCondition.parentId}
             </if>
