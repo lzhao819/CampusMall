@@ -24,7 +24,7 @@ $(function(){
             }
         });
         $('#submit').click(function() {
-            var shop {};
+            //var shop {};
             shop.shopName = $('#shop-name').val();
             shop.shopAddr = $('#shop-addr').val();
             shop.shopPhone = $('#shop-phone').val();
@@ -43,6 +43,12 @@ $(function(){
             var formData = new FormData();
             formData.append('shopImg',shopImg);
             formData.append('shopStr',JSON.stringify(shop));
+            var verifyCodeActual = $('#j_captcha').val();
+            if(!verifyCodeActual){
+                $.toast('请输入验证码！');
+                return;
+            }
+            fromData.append('verifyCodeActual',verifyCodeActual);
             $.ajax({
                 url:registerShopUrl,
                 type:'POST',
@@ -56,8 +62,9 @@ $(function(){
                     }else{
                         $.toast('提交失败'+ data.errMsg);
                     }
+                    $('#captcha_img').click();
                 }
-            })
+            });
         });
     }
 })
