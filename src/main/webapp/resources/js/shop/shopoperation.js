@@ -1,3 +1,4 @@
+
 /**
  *
  * */
@@ -24,7 +25,7 @@ $(function(){
             }
         });
         $('#submit').click(function() {
-            //var shop {};
+            var shop = {};
             shop.shopName = $('#shop-name').val();
             shop.shopAddr = $('#shop-addr').val();
             shop.shopPhone = $('#shop-phone').val();

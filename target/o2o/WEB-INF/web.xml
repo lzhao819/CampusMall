@@ -14,7 +14,7 @@
     </init-param>
     <!-- 字体颜色 -->
     <init-param>
-      <param-name>kaptcha.textproducer.font</param-name>
+      <param-name>kaptcha.textproducer.font.color</param-name>
       <param-value>red</param-value>
     </init-param>
     <!-- 图片宽度 -->
