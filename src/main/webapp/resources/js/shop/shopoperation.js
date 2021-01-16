@@ -40,7 +40,7 @@ $(function(){
                     return !this.selected;
                 }).data('id')
             };
-            var shopImg = $('#shop-img')[0].file[0];
+            var shopImg = $('#shop-img')[0].files[0];
             var formData = new FormData();
             formData.append('shopImg',shopImg);
             formData.append('shopStr',JSON.stringify(shop));
