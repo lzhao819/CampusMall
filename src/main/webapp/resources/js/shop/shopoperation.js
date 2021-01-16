@@ -28,7 +28,7 @@ $(function(){
             var shop = {};
             shop.shopName = $('#shop-name').val();
             shop.shopAddr = $('#shop-addr').val();
-            shop.shopPhone = $('#shop-phone').val();
+            shop.phone = $('#shop-phone').val();
             shop.shopDesc = $('#shop-desc').val();
             shop.shopCategory = {
                 shopCategoryId:$('#shop-category').find('option').not(function () {
@@ -49,7 +49,7 @@ $(function(){
                 $.toast('请输入验证码！');
                 return;
             }
-            fromData.append('verifyCodeActual',verifyCodeActual);
+            formData.append('verifyCodeActual',verifyCodeActual);
             $.ajax({
                 url:registerShopUrl,
                 type:'POST',

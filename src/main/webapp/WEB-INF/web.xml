@@ -1,9 +1,19 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>spring-dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- 配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml
+        Mybatis - > spring -> springmvc -->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring/spring-*.xml</param-value>
+    </init-param>
+  </servlet>
   <servlet>
     <servlet-name>Kaptcha</servlet-name>
     <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
@@ -15,7 +25,7 @@
     <!-- 字体颜色 -->
     <init-param>
       <param-name>kaptcha.textproducer.font.color</param-name>
-      <param-value>red</param-value>
+      <param-value>green</param-value>
     </init-param>
     <!-- 图片宽度 -->
     <init-param>
@@ -30,7 +40,7 @@
     <!-- 图片高度 -->
     <init-param>
       <param-name>kaptcha.image.height</param-name>
-      <param-value>50</param-value>
+      <param-value>59</param-value>
     </init-param>
     <!-- 字体大小 -->
     <init-param>
@@ -57,17 +67,6 @@
     <servlet-name>Kaptcha</servlet-name>
     <url-pattern>/Kaptcha</url-pattern>
   </servlet-mapping>
-  <!-- 配置DispatcherServlet -->
-  <servlet>
-    <servlet-name>spring-dispatcher</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <!-- 配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml
-        Mybatis - > spring -> springmvc -->
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/spring-*.xml</param-value>
-    </init-param>
-  </servlet>
   <servlet-mapping>
     <servlet-name>spring-dispatcher</servlet-name>
     <!-- 默认匹配所有的请求 -->
