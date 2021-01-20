@@ -25,14 +25,14 @@ public class Shop {
 	private Area area;
 	private ShopCategory shopCategory;
 	//private ShopCategory parentCategory;
-
-
-	public Integer getEnableStatus() {
-		return enableStatus;
-	}
+	private PersonInfo personInfo;
 
 	public void setEnableStatus(Integer enableStatus) {
 		this.enableStatus = enableStatus;
+	}
+
+	public Integer getEnableStatus() {
+		return enableStatus;
 	}
 
 	public String getPhone() {
@@ -145,5 +145,13 @@ public class Shop {
 
 	public void setShopCategory(ShopCategory shopCategory) {
 		this.shopCategory = shopCategory;
+	}
+
+	public PersonInfo getPersonInfo() {
+		return personInfo;
+	}
+
+	public void setPersonInfo(PersonInfo personInfo) {
+		this.personInfo = personInfo;
 	}
 }

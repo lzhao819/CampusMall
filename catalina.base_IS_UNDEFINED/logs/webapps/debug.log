@@ -1,21 +1,19 @@
-2021-01-10 00:43:45.148[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 00:43:45.208[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 00:43:45.265[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 00:48:45.126[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 00:48:45.179[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 00:48:45.224[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 00:54:44.379[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 00:54:44.439[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 00:54:44.489[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 00:58:39.637[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 00:58:39.688[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 00:58:39.726[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 01:01:00.039[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 01:01:00.091[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 01:01:00.138[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 01:05:25.865[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2021-01-10 01:05:25.917[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2021-01-10 01:05:25.955[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
-2021-01-10 01:05:25.987[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
-2021-01-10 01:05:25.988[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
-2021-01-10 01:05:25.996[main] DEBUG com.usc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2021-01-20 14:40:34.404[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:40:34.474[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 1(Long)
+2021-01-20 14:40:34.517[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 0
+2021-01-20 14:41:43.096[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:41:43.157[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 29(Long)
+2021-01-20 14:41:43.190[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 0
+2021-01-20 14:43:42.359[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:43:42.422[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 14:47:58.032[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:47:58.109[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 14:47:58.158[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2021-01-20 14:50:39.071[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:50:39.123[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 14:57:39.421[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:57:39.487[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 14:57:39.543[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2021-01-20 14:58:19.990[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 14:58:20.041[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 14:58:20.101[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
