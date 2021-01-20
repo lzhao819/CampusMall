@@ -141,5 +141,25 @@ public class ImageUtil {
                 .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.png")), 0.25f)
                 .outputQuality(0.8f).toFile("/Users/zhangshaochen/IdeaProjects/o2o/src/main/resources/newsc.png");
     }
+
+    /**
+     * 如果storePath是文件路径还是目录路径
+     * 如果是文件则删除该文件
+     * 如果是目录则删除目录下的所以文件
+     * @param storePath
+     */
+    public static void deleteFileOrPath(String storePath){
+        File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+        if(fileOrPath.exists()){
+            if(fileOrPath.isDirectory()){
+                File files[] =  fileOrPath.listFiles();
+                for(int i=0;i<files.length;i++){
+                    files[i].delete();
+                }
+            }
+            fileOrPath.delete();
+        }
+
+    }
 }
 

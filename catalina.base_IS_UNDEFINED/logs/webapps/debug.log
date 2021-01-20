@@ -17,3 +17,21 @@
 2021-01-20 14:58:19.990[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
 2021-01-20 14:58:20.041[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
 2021-01-20 14:58:20.101[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2021-01-20 15:30:56.780[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, create_time,last_edit_time,enable_status,advice) VALUES (?,?,?, ?,?,?,?,?, ?,?, ?,?) 
+2021-01-20 15:30:56.873[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Long), 1(Long), 测试的店铺3(String), test3(String), test3(String), test3(String), null, 2021-01-20 15:30:56.746(Timestamp), 2021-01-20 15:30:56.746(Timestamp), 0(Integer), 审核中(String)
+2021-01-20 15:30:56.896[main] DEBUG com.usc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2021-01-20 15:30:57.440[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2021-01-20 15:30:57.442[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺3(String), test3(String), test3(String), test3(String), /upload/images/item/shop/38/2021012015305696087.jpeg(String), 2021-01-20 15:30:56.746(Timestamp), 0(Integer), 审核中(String), 2(Long), 1(Long), 38(Long)
+2021-01-20 15:30:57.463[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2021-01-20 15:30:57.476[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2021-01-20 15:30:57.477[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 修改过后的店铺名称(String), 2021-01-20 15:30:57.475(Timestamp), 33(Long)
+2021-01-20 15:30:57.504[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2021-01-20 15:30:57.509[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 15:30:57.510[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 33(Long)
+2021-01-20 15:30:57.540[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2021-01-20 15:32:16.781[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, last_edit_time=? where shop_id=? 
+2021-01-20 15:32:16.858[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - ==> Parameters: 修改过后的店铺名称(String), 2021-01-20 15:32:16.091(Timestamp), 34(Long)
+2021-01-20 15:32:16.864[main] DEBUG com.usc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2021-01-20 15:32:16.868[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_id = ? AND s.area_id=a.area_id AND s.shop_category_id = sc.shop_category_id 
+2021-01-20 15:32:16.869[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 34(Long)
+2021-01-20 15:32:16.911[main] DEBUG com.usc.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
