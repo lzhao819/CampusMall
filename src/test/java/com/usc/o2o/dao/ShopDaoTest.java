@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,6 +18,24 @@ public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopDao shopDao;
     @Test
+    public void testQueryShopListAndCount(){
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        owner.setUserId(1L);
+        shopCondition.setOwnerId(owner.getUserId());
+        List<Shop> shopList = shopDao.queryShopList(shopCondition,1,10);
+        int count = shopDao.queryShopCount(shopCondition);
+        System.out.println("店铺列表的大小：" + shopList.size());
+        System.out.println("店铺总数：" + count);
+        ShopCategory sc = new ShopCategory();
+        sc.setShopCategoryId(1L);
+        shopCondition.setShopCategory(sc);
+        shopList = shopDao.queryShopList(shopCondition,1,10);
+        count = shopDao.queryShopCount(shopCondition);
+        System.out.println("新店铺总数：" + count);
+    }
+    @Test
+    @Ignore
     public void testQueryByShopId(){
         long shopId=33;
         Shop shop = shopDao.queryByShopId(shopId);
