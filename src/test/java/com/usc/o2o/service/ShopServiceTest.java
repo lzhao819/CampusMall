@@ -18,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,6 +26,18 @@ public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
     @Test
+    public void testGetShopList(){
+        Shop shopCondition = new Shop();
+        ShopCategory sc = new ShopCategory();
+        sc.setShopCategoryId(1L);
+        shopCondition.setShopCategory(sc);
+        ShopExecution se = shopService.getShopList(shopCondition,0,2);
+        //count = shopDao.queryShopCount(shopCondition);
+        System.out.println("店铺列表数：" + se.getShopList().size());
+        System.out.println("店铺总数：" + se.getCount());
+    }
+    @Test
+    @Ignore
     public void testModifyShop() throws ShopOperationException, FileNotFoundException{
         Shop shop  = new Shop();
         shop.setShopId(34L);
