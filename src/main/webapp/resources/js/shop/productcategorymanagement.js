@@ -79,7 +79,7 @@ $(function() {
                     type : 'POST',
                     data : {
                         productCategoryId : target.dataset.id,
-                        shopId : shopId
+                        //shopId : shopId
                     },
                     dataType : 'json',
                     success : function(data) {
