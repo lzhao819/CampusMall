@@ -36,16 +36,14 @@
         #{productCategory.shopId}
         )
     </foreach>
-</insert>
+    </insert>
 
-<!--    <delete id="deleteProductCategory">-->
-<!--        &lt;!&ndash; 具体的sql &ndash;&gt;-->
-<!--        DELETE FROM-->
-<!--        tb_product_category-->
-<!--        WHERE-->
-<!--        product_category_id =-->
-<!--        #{productCategoryId}-->
-<!--        AND shop_id=#{shopId}-->
-<!--    </delete>-->
+    <delete id="deleteProductCategory">
+        DELETE FROM
+        tb_product_category
+        WHERE
+        product_category_id = #{productCategoryId}
+        AND shop_id = #{shopId}
+    </delete>
 
 </mapper>

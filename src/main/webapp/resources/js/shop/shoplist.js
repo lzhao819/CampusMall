@@ -41,8 +41,8 @@ $(function(){
     }
 
     function goShop(status, id){
-        if(status==-1){
-            return  '<a href="/o2o_war/shopadmin/shopmanagement?shopId=' +id+ '"进入</a>';
+        if(status == 1){
+            return  '<a href="/o2o_war/shopadmin/shopmanagement?shopId=' +id+ '">进入</a>';
         }else{
             return '';
         }

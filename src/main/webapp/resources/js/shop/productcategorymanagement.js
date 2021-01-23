@@ -65,7 +65,7 @@ $(function() {
                 var tempHtml = '<div class="row row-product-category temp">'
                     + '<div class="col-33"><input class="category-input category" type="text" placeholder="分类名"></div>'
                     + '<div class="col-33"><input class="category-input priority" type="number" placeholder="优先级"></div>'
-                    + '<div class="col-33"><a href="#" class="button delete">删除</a></div>'
+                    + '<div class="col-33"><a href="#" class="button delete">Delete</a></div>'
                     + '</div>';
                 $('.category-wrap').append(tempHtml);
             });
