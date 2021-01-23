@@ -6,7 +6,7 @@ public class ProductCategory {
 	private Long productCategoryId;
 	private Long shopId;
 	private String productCategoryName;
-	private String productCategoryDesc;
+	//private String productCategoryDesc;
 	private Integer priority;
 	private Date createTime;
 //	private Date lastEditTime;
@@ -35,13 +35,13 @@ public class ProductCategory {
 		this.productCategoryName = productCategoryName;
 	}
 
-	public String getProductCategoryDesc() {
-		return productCategoryDesc;
-	}
+//	public String getProductCategoryDesc() {
+//		return productCategoryDesc;
+//	}
 
-	public void setProductCategoryDesc(String productCategoryDesc) {
-		this.productCategoryDesc = productCategoryDesc;
-	}
+//	public void setProductCategoryDesc(String productCategoryDesc) {
+//		this.productCategoryDesc = productCategoryDesc;
+//	}
 
 	public Integer getPriority() {
 		return priority;
