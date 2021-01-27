@@ -1,6 +1,7 @@
 package com.usc.o2o.service;
 
 import com.usc.o2o.BaseTest;
+import com.usc.o2o.dto.ImageHolder;
 import com.usc.o2o.dto.ShopExecution;
 import com.usc.o2o.entity.Area;
 import com.usc.o2o.entity.PersonInfo;
@@ -44,7 +45,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("修改过后的店铺名称");
         File shopImg = new File( "/Users/lu/Documents/project/CampusMall/src/assets/testimg.jpg");
         InputStream is =  new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "testimg.jpg");
+        ImageHolder imageHolder = new ImageHolder("testimg.jpg",is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, imageHolder);
         System.out.println("新的图片地址为"+ shopExecution.getShop().getShopImg());
     }
     @Test
@@ -70,7 +72,8 @@ public class ShopServiceTest extends BaseTest {
 
         File shopImg = new File( "/Users/lu/Documents/project/CampusMall/src/assets/pic.jpeg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution se = shopService.addShop(shop, is, shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder("pic.jpeg",is);
+        ShopExecution se = shopService.addShop(shop, imageHolder);
         assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
     }
 }

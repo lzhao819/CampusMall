@@ -1,5 +1,6 @@
 package com.usc.o2o.service;
 
+import com.usc.o2o.dto.ImageHolder;
 import com.usc.o2o.dto.ShopExecution;
 import com.usc.o2o.entity.Shop;
 import com.usc.o2o.exceptions.ShopOperationException;
@@ -27,19 +28,17 @@ public interface ShopService {
     /**
      * 更新店铺信息
      * @param shop
-     * @param shopImgInputStream
-     * @param fileName
+     * @param thumbnail
      * @return
      */
-    ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName)throws ShopOperationException;
+    ShopExecution modifyShop(Shop shop, ImageHolder thumbnail)throws ShopOperationException;
 
     /**
      * 注册店铺
      * @param shop
-     * @param shopImgInputStream
-     * @param fileName
+     * @param thumbnail
      * @return
      * @throws ShopOperationException
      */
-    ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 }
