@@ -14,32 +14,32 @@
         <result column="create_time" property="createTime" />
         <result column="last_edit_time" property="lastEditTime" />
         <result column="enable_status" property="enableStatus" />
-        <result column="point" property="point" />
+<!--        <result column="point" property="point" />-->
         <association property="productCategory" column="product_category_id"
                      javaType="com.usc.o2o.entity.ProductCategory">
             <id column="product_category_id" property="productCategoryId" />
             <result column="product_category_name" property="productCategoryName" />
-            <result column="product_category_desc" property="productCategoryDesc" />
-            <result column="priority" property="priority" />
-            <result column="create_time" property="createTime" />
-            <result column="last_edit_time" property="lastEditTime" />
+<!--            <result column="product_category_desc" property="productCategoryDesc" />-->
+<!--            <result column="priority" property="priority" />-->
+<!--            <result column="create_time" property="createTime" />-->
+<!--            <result column="last_edit_time" property="lastEditTime" />-->
         </association>
         <association property="shop" column="shop_id"
                      javaType="com.usc.o2o.entity.Shop">
             <id column="shop_id" property="shopId" />
             <result column="owner_id" property="ownerId" />
             <result column="shop_name" property="shopName" />
-            <result column="shop_desc" property="shopDesc" />
-            <result column="shop_addr" property="shopAddr" />
-            <result column="phone" property="phone" />
-            <result column="shop_img" property="shopImg" />
-            <result column="longitude" property="longitude" />
-            <result column="latitude" property="latitude" />
-            <result column="priority" property="priority" />
-            <result column="create_time" property="createTime" />
-            <result column="last_edit_time" property="lastEditTime" />
-            <result column="enable_status" property="enableStatus" />
-            <result column="advice" property="advice" />
+<!--            <result column="shop_desc" property="shopDesc" />-->
+<!--            <result column="shop_addr" property="shopAddr" />-->
+<!--            <result column="phone" property="phone" />-->
+<!--            <result column="shop_img" property="shopImg" />-->
+<!--            <result column="longitude" property="longitude" />-->
+<!--            <result column="latitude" property="latitude" />-->
+<!--            <result column="priority" property="priority" />-->
+<!--            <result column="create_time" property="createTime" />-->
+<!--            <result column="last_edit_time" property="lastEditTime" />-->
+<!--            <result column="enable_status" property="enableStatus" />-->
+<!--            <result column="advice" property="advice" />-->
         </association>
         <collection property="productImgList" column="product_id"
                     ofType="com.usc.o2o.entity.ProductImg">
@@ -51,7 +51,7 @@
             <result column="product_id" property="productId" />
         </collection>
     </resultMap>
-    <select id="queryProductList" resultMap="productMap">
+    <select id="queryProductList" resultType="com.usc.o2o.entity.Product">
         SELECT
         product_id,
         product_name,
@@ -132,11 +132,11 @@
         p.create_time,
         p.last_edit_time,
         p.enable_status,
-        p.point,
+--         p.point,
         p.product_category_id,
         p.shop_id,
         pm.product_img_id,
-        pm.img_addr,
+        pm.img_addr AS detail_img,
         pm.img_desc,
         pm.priority,
         pm.create_time
@@ -178,7 +178,7 @@
             <if test="priority != null">priority=#{priority},</if>
             <if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
             <if test="enableStatus != null">enable_status=#{enableStatus},</if>
-            <if test="point != null">point=#{point},</if>
+<!--            <if test="point != null">point=#{point},</if>-->
             <if
                     test="productCategory != null
 				 and productCategory.productCategoryId != null">

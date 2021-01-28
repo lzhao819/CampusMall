@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value="shopadmin", method = {RequestMethod.GET})
+/**
+ * 主要用来解析路由并转发到相应的html中
+ */
 public class ShopAdminController {
     @RequestMapping(value = "/shopoperation")
     public String shopOperation(){
@@ -25,5 +28,10 @@ public class ShopAdminController {
     @RequestMapping(value = "/productcategorymanagement", method=RequestMethod.GET)
     public String productCategoryManagement(){
         return "shop/productcategorymanagement";
+    }
+
+    @RequestMapping(value = "/productoperation")
+    public String productOperation(){
+        return "shop/productoperation";
     }
 }
