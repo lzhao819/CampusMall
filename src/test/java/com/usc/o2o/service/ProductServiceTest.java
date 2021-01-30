@@ -9,6 +9,7 @@ import com.usc.o2o.entity.Shop;
 import com.usc.o2o.enums.ProductCategoryStateEnum;
 import com.usc.o2o.enums.ProductStateEnum;
 import com.usc.o2o.exceptions.ShopOperationException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,6 +28,7 @@ public class ProductServiceTest extends BaseTest {
     private ProductService productService;
 
     @Test
+    @Ignore
     public void testAddProduct() throws ShopOperationException, FileNotFoundException {
         Product product = new Product();
         Shop shop = new Shop();
@@ -55,5 +57,33 @@ public class ProductServiceTest extends BaseTest {
         //添加商品并验证
         ProductExecution pe =  productService.addProduct(product, thumbnail, productImgList);
         assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
+    }
+    @Test
+    public void testModifyProduct() throws ShopOperationException, FileNotFoundException{
+        Product product = new Product();
+        Shop shop = new Shop();
+        shop.setShopId(33L);
+        ProductCategory pc = new ProductCategory();
+        pc.setProductCategoryId(20L);
+        product.setProductId(17L);
+        product.setShop(shop);
+        product.setProductCategory(pc);
+        product.setProductName("正式的商品");
+        product.setProductDesc("正式的商品");
+        //创建缩略图文件流
+        File thumbnailFile = new File("/Users/lu/Documents/project/CampusMall/src/assets/pic.jpeg");
+        InputStream is = new FileInputStream(thumbnailFile);
+        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(),is);
+        //创建两个商品详情图文件流并将他们添加详情图列表中
+        File productImg1 = new File("/Users/lu/Documents/project/CampusMall/src/assets/pic.jpeg");
+        InputStream is1 = new FileInputStream(productImg1);
+        File productImg2 = new File("/Users/lu/Documents/project/CampusMall/src/assets/pic.jpeg");
+        InputStream is2 = new FileInputStream(productImg2);
+        List<ImageHolder> productImgList = new ArrayList<>();
+        productImgList.add(new ImageHolder(productImg1.getName(),is1));
+        productImgList.add(new ImageHolder(productImg2.getName(),is2));
+        //添加商品并验证
+        ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+        assertEquals(ProductStateEnum.SUCCESS.getState(),pe.getState());
     }
 }
