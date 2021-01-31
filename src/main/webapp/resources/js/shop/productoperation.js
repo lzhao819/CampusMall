@@ -32,7 +32,7 @@ $(function() {
                         var optionHtml = '';
                         var optionArr = data.productCategoryList;
                         var optionSelected = product.productCategory.productCategoryId;
-                        //生成前端HTML 商品类别列表并默认选择编辑前的商品类别
+                        //生成前端HTML商品类别列表并默认选择编辑前的商品类别
                         optionArr
                             .map(function(item, index) {
                                 var isSelect = optionSelected === item.productCategoryId ? 'selected'
