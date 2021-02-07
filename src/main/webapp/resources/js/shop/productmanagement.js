@@ -1,6 +1,6 @@
 $(function() {
     //获取此店铺下的商品列表URL
-    var listUrl = '/o2o_war/shopamin/getproductlistbyshop?pageIndex=1&pageSize=9999';
+    var listUrl = '/o2o_war/shopadmin/getproductlistbyshop?pageIndex=1&pageSize=9999';
     //商品下架URL
     var statusUrl = '/o2o_war/shopadmin/modifyproduct';
     getList();
@@ -39,7 +39,7 @@ $(function() {
                         + '" data-status="'
                         + item.enableStatus
                         + '">编辑</a>'
-                        + '<a href="#" class="delete" data-id="'
+                        + '<a href="#" class="status" data-id="'
                         + item.productId
                         + '" data-status="'
                         + contraryStatus

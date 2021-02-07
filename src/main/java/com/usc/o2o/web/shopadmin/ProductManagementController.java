@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -155,7 +154,7 @@ public class ProductManagementController {
         //是商品编辑调用还是上下架操作调用
         boolean statusChange = HttpServletRequestUtil.getBoolean(request,"statusChange");
         //验证码判断
-        if(statusChange&&!CodeUtil.checkVerifyCode(request)){
+        if(!statusChange&&!CodeUtil.checkVerifyCode(request)){
             modelMap.put("success",false);
             modelMap.put("errMsg","输入了错误的验证码");
             return modelMap;

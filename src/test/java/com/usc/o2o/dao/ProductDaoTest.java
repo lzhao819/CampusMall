@@ -72,6 +72,7 @@ public class ProductDaoTest extends BaseTest {
     }
 
     @Test
+    @Ignore
     public void testBQueryProductList() throws Exception{
         Product productCondition = new Product();
         //分页查询,预期返回三条结果
@@ -130,10 +131,12 @@ public class ProductDaoTest extends BaseTest {
         assertEquals(1,effectedNum);
     }
 
-//    @Test
-//    public void testEUpdateProductCategoryToNull(){
-//
-//    }
+    @Test
+    public void testEUpdateProductCategoryToNull(){
+        int effectedNum = productDao.updateProductCategoryToNull(20L);
+        assertEquals(2,effectedNum);
+
+    }
 
 
 
