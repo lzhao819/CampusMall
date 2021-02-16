@@ -24,7 +24,7 @@ public class Shop {
 	//private List<ShopAuthMap> staffList;
 	private Area area;
 	private ShopCategory shopCategory;
-	//private ShopCategory parentCategory;
+	private ShopCategory parentCategory;
 	private PersonInfo personInfo;
 
 	public void setEnableStatus(Integer enableStatus) {
@@ -145,6 +145,14 @@ public class Shop {
 
 	public void setShopCategory(ShopCategory shopCategory) {
 		this.shopCategory = shopCategory;
+	}
+
+	public ShopCategory getParentCategory() {
+		return parentCategory;
+	}
+
+	public void setParentCategory(ShopCategory parentCategory) {
+		this.parentCategory = parentCategory;
 	}
 
 	public PersonInfo getPersonInfo() {

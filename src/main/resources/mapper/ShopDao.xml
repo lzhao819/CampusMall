@@ -1,37 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.usc.o2o.dao.ShopDao">
     <resultMap id="shopMap" type="com.usc.o2o.entity.Shop">
-        <id column="shop_id" property="shopId" />
-        <result column="shop_name" property="shopName" />
-        <result column="shop_desc" property="shopDesc" />
-        <result column="shop_addr" property="shopAddr" />
-        <result column="phone" property="phone" />
-        <result column="shop_img" property="shopImg" />
-        <result column="priority" property="priority" />
-        <result column="create_time" property="createTime" />
-        <result column="last_edit_time" property="lastEditTime" />
-        <result column="enable_status" property="enableStatus" />
-        <result column="advice" property="advice" />
-        <association property="area" column="area_id"
-                     javaType="com.usc.o2o.entity.Area">
-            <id column="area_id" property="areaId" />
-            <result column="area_name" property="areaName" />
+        <id column="shop_id" property="shopId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_desc" property="shopDesc"/>
+        <result column="shop_addr" property="shopAddr"/>
+        <result column="phone" property="phone"/>
+        <result column="shop_img" property="shopImg"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <result column="enable_status" property="enableStatus"/>
+        <result column="advice" property="advice"/>
+        <association property="area" column="area_id" javaType="com.usc.o2o.entity.Area">
+            <id column="area_id" property="areaId"/>
+            <result column="area_name" property="areaName"/>
         </association>
-        <association property="shopCategory" column="shop_category_id"
-                     javaType="com.usc.o2o.entity.ShopCategory">
-            <id column="shop_category_id" property="shopCategoryId" />
-            <result column="shop_category_name" property="shopCategoryName" />
+        <association property="shopCategory" column="shop_category_id" javaType="com.usc.o2o.entity.ShopCategory">
+            <id column="shop_category_id" property="shopCategoryId"/>
+            <result column="shop_category_name" property="shopCategoryName"/>
         </association>
-        <association property="personInfo" column="user_id"
-                     javaType="com.usc.o2o.entity.PersonInfo">
-            <id column="user_id" property="userId" />
-            <result column="name" property="name" />
+        <association property="personInfo" column="user_id" javaType="com.usc.o2o.entity.PersonInfo">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name"/>
         </association>
     </resultMap>
-    <select id ="queryShopList" resultMap="shopMap">
+    <select id="queryShopList" resultMap="shopMap">
         SELECT
         s.shop_id,
         s.shop_name,
@@ -53,19 +50,24 @@
         tb_area a,
         tb_shop_category sc
         <where>
-            <if test = "shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.shopCategoryId != null" >
                 and s.shop_category_id = #{shopCondition.shopCategory.shopCategoryId}
             </if>
-            <if test = "shopCondition.area!=null and shopCondition.area.areaId!=null">
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parent != null
+            and shopCondition.shopCategory.parent.shopCategoryId != null">
+                and s.shop_category_id in (select shop_category_id from tb_shop_category
+                WHERE parent_id = #{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
+            <if test="shopCondition.area != null and shopCondition.area.areaId != null" >
                 and s.area_id = #{shopCondition.area.areaId}
             </if>
-            <if test="shopCondition.shopName!=null">
-                and s.shop_name like '%{shopCondition.shopName}%'
+            <if test="shopCondition.shopName != null">
+                and s.shop_name like '%${shopCondition.shopName}%'
             </if>
-            <if test="shopCondition.enableStatus!=null">
+            <if test="shopCondition.enableStatus != null">
                 and s.enable_status = #{shopCondition.enableStatus}
             </if>
-            <if test="shopCondition.ownerId!=null">
+            <if test="shopCondition.ownerId != null">
                 and s.owner_id = #{shopCondition.ownerId}
             </if>
             AND
@@ -75,29 +77,42 @@
         </where>
         ORDER BY
         s.priority DESC
-        LIMIT #{rowIndex},#{pageSize}
+        LIMIT #{rowIndex}, #{pageSize};
     </select>
-    <select id="queryShopCount" resultType="int" >
+    <select id="queryShopCount" resultType="int">
         SELECT
-        count(1)
+        COUNT(1)
         FROM
         tb_shop s,
         tb_area a,
         tb_shop_category sc
         <where>
-            <if test = "shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.shopCategoryId != null" >
                 and s.shop_category_id = #{shopCondition.shopCategory.shopCategoryId}
             </if>
-            <if test = "shopCondition.area!=null and shopCondition.area.areaId!=null">
+            <!--            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parentId != null">-->
+            <!--                and s.shop_category_id in (select shop_category_id from tb_shop_category-->
+            <!--                WHERE parent_id = # {shopCondition.shopCategory.parentId})-->
+            <!--            </if>-->
+
+            <if test="shopCondition.shopCategory != null and shopCondition.shopCategory.parent != null
+            and shopCondition.shopCategory.parent.shopCategoryId != null">
+                and s.shop_category_id in (select shop_category_id from tb_shop_category
+                WHERE parent_id = #{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
+
+
+
+            <if test="shopCondition.area != null and shopCondition.area.areaId != null" >
                 and s.area_id = #{shopCondition.area.areaId}
             </if>
-            <if test="shopCondition.shopName!=null">
-                and s.shop_name like '%{shopCondition.shopName}%'
+            <if test="shopCondition.shopName != null">
+                and s.shop_name like '%${shopCondition.shopName}%'
             </if>
-            <if test="shopCondition.enableStatus!=null">
+            <if test="shopCondition.enableStatus != null">
                 and s.enable_status = #{shopCondition.enableStatus}
             </if>
-            <if test="shopCondition.ownerId!=null">
+            <if test="shopCondition.ownerId != null">
                 and s.owner_id = #{shopCondition.ownerId}
             </if>
             AND
@@ -105,10 +120,8 @@
             AND
             s.shop_category_id = sc.shop_category_id
         </where>
-
     </select>
     <select id="queryByShopId" resultMap="shopMap" parameterType="Long">
-        <!-- 具体的sql -->
         SELECT
         s.shop_id,
         s.shop_name,
@@ -130,23 +143,23 @@
         tb_area a,
         tb_shop_category sc
         WHERE
-        s.shop_id = #{shopId}
-        AND
-        s.area_id=a.area_id
+        s.area_id = a.area_id
         AND
         s.shop_category_id = sc.shop_category_id
+        AND
+        s.shop_id = #{shopId}
     </select>
     <insert id="insertShop" useGeneratedKeys="true" keyColumn="shop_id" keyProperty="shopId">
-        <!-- 具体的sql -->
         INSERT INTO
         tb_shop(owner_id,area_id,shop_category_id,
-        shop_name,shop_desc,shop_addr,phone,shop_img,
-        create_time,last_edit_time,enable_status,advice)
+		shop_name,shop_desc,shop_addr,phone,shop_img,
+		create_time,last_edit_time,
+		enable_status,advice)
         VALUES
         (#{ownerId},#{area.areaId},#{shopCategory.shopCategoryId},
-        #{shopName},#{shopDesc},#{shopAddr},#{phone},#{shopImg},
-        #{createTime},#{lastEditTime},
-        #{enableStatus},#{advice})
+		#{shopName},#{shopDesc},#{shopAddr},#{phone},#{shopImg},
+		#{createTime},#{lastEditTime},
+		#{enableStatus},#{advice})
     </insert>
     <update id="updateShop" parameterType="com.usc.o2o.entity.Shop">
         update tb_shop
