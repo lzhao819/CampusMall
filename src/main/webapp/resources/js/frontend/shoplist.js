@@ -3,7 +3,7 @@ $(function() {
     //分页允许返回的最大条数，超过此数则禁止访问后台
     var maxItems = 999;
     //一页返回的最大条数
-    var pageSize = 10;
+    var pageSize = 3;
     //获取店铺列表的URL
     var listUrl = '/o2o_war/frontend/listshops';
     //获取店铺类别列表以及区域列表的URL
@@ -29,7 +29,7 @@ $(function() {
                     if (data.success) {
                         var shopCategoryList = data.shopCategoryList;
                         var html = '';
-                        html += '<a href="#" class="button" data-category-id=""> 全部类别  </a>';
+                        html += '<a href="#" class="button" data-category-id=""> 全部类别 </a>';
                         shopCategoryList
                             .map(function(item, index) {
                                 html += '<a href="#" class="button" data-category-id='
@@ -103,13 +103,13 @@ $(function() {
     }
     // 预先加载10条店铺信息
     addItems(pageSize, pageNum);
-
+    //下滑屏幕自动分页搜索
     $(document).on('infinite', '.infinite-scroll-bottom', function() {
         if (loading)
             return;
         addItems(pageSize, pageNum);
     });
-
+    //点击店铺卡片进入详情页
     $('.shop-list').on('click', '.card', function(e) {
         var shopId = e.currentTarget.dataset.shopId;
         window.location.href = '/o2o_war/frontend/shopdetail?shopId=' + shopId;
@@ -129,6 +129,7 @@ $(function() {
                         .removeClass('button-fill');
                 }
                 $('.list-div').empty();
+                //重置页码
                 pageNum = 1;
                 addItems(pageSize, pageNum);
             } else {// 如果传递过来的父类为空，则按照父类查询
@@ -165,6 +166,6 @@ $(function() {
     $('#me').click(function() {
         $.openPanel('#panel-left-demo');
     });
-
+    //初始化页面
     $.init();
 });
